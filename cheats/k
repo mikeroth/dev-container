@@ -1,0 +1,50 @@
+# Kubernetes Cheat Sheet
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+# Visual Guide to troubleshooting Kubernetes
+https://learnk8s.io/troubleshooting-deployments
+
+# Show pods running on a node
+$ k get pods --all-namespaces -o wide --field-selector spec.nodeName=<NODE NAME>
+
+# Show pods that are in a pending state
+$ k get pods --field-selector=status.phase=Pending -n <NAMESPACE>
+
+# Troubleshhoting using busybox
+$ k run -i --tty --rm debug --image=busybox --restart=Never -- sh
+
+# Troubleshoot using AWS CLI
+$ k run -i --tty --rm debug --image=amazon/aws-cli --restart=Never -- sh
+
+# Authenticate with cluster
+$ aws eks update-kubeconfig --name <CLUSTER NAME> --alias <ALIAS> --region us-west-2
+
+# Get a shell into a pod
+$ k exec -n grafana -it <POD NAME> -- /bin/sh
+
+# Get a shell into a pod with a certain container:
+$ k exec -n grafana -it <POD NAME> --container grafana -- /bin/sh
+
+# Port Forward
+$ k port-forward services/longhorn-frontend 8080:http -n longhorn-system
+
+# Get a secret and decrypt it
+$ kubectl -n argocd get secret <SECRET NAME> -o jsonpath="{.data.password}" | base64 -d
+
+# Top for kubernetes
+$ k top
+
+# What is the current context being used
+k config current-context --kubeconfig my-kube-config
+
+# Switch to anther context
+k config --kubeconfig=/root/my-kube-config use-context research
+
+# Check your users access
+k auth can-i create deployments
+
+# Check access for another user
+k auth can-i create deployments --as dev-user --namespace test
+
+# Cluster info
+k cluster-info dump

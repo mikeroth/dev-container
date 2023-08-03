@@ -1,0 +1,29 @@
+# Tail logs from a pod
+$ k logs etcd-minikube -c etcd -n kube-system --tail 1 --follow 
+
+# Print the logs for a container in a pod
+$ k logs <pod-name> -c <conatiner_name>
+
+# Get logs from all containers
+$ k logs <pod-name> --all-containers=true
+
+# Get logs from inside a container
+$ k -n elastic-stack exec -it app -- cat /log/app.log
+ 
+# Print the logs for the last hour for a pod
+$ k logs --since=1h <pod_name>
+ 
+# Get the most recent 20 lines of logs
+$ k logs --tail=20 <pod_name>
+ 
+# Get logs from a service and optionally select which container
+$ k logs -f <service_name> [-c <$container>]
+ 
+# Print the logs for a pod and follow new logs
+$ k logs -f <pod_name>
+ 
+# Output the logs for a pod into a file named ‘pod.log’
+$ k logs <pod_name> pod.log
+ 
+# View the logs for a previously failed pod
+$ k logs --previous <pod_name>

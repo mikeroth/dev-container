@@ -1,0 +1,13 @@
+#!/bin/bash
+
+docker run \
+    --rm \
+    -h Gibson \
+    -v ~/work/:/home/Neo/work/ \
+    -v ~/.zsh_history:/home/Neo/.zsh_history \
+    -v ~/.ssh/:/home/Neo/.ssh/ \
+    -v ~/.aws/:/home/Neo/.aws/ \
+    -v ~/.kube:/home/Neo/.kube/ \
+    -v ~/.gitconfig:/home/Neo/.gitconfig \
+    -v ~/.oh-my-zsh/:/home/Neo/.oh-my-zsh/ \
+    -it dev:v0.0.1

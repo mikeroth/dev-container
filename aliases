@@ -1,0 +1,5 @@
+# Aliases for adding colors to various commands
+alias cheat='cheat -c'
+alias kubectl='kubecolor'
+alias k=kubectl
+alias genpass="dd if=/dev/urandom bs=1 count=20 2>/dev/null | base64 -i - | rev | cut -b 2- | rev"

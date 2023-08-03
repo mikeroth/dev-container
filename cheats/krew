@@ -1,0 +1,35 @@
+# show the status of objects
+https://github.com/bergerx/kubectl-status
+$ k krew install status
+EX: $ k status -h
+
+# Show who changed what
+https://github.com/knight42/kubectl-blame
+$ k krew install blame
+EX: $ k blame -h
+
+# Show examples
+https://github.com/seredot/kubectl-example
+$ k krew install example
+EX: k example pod
+
+# Fuzzy Finder
+https://github.com/d-kuro/kubectl-fuzzy
+$ k krew install fuzzy
+EX: k fuzzy logs -A
+EX: k fuzzy -h
+
+# Restart tracker
+https://github.com/soraro/kurt
+$ k krew install kurt
+EX: k kurt -h
+
+# Scans for potential issues
+https://popeyecli.io
+$ k krew install popeye 
+EX: k popeye
+
+# View a secret
+https://github.com/elsesiy/kubectl-view-secret
+$ k krew install view-secret
+EX: k view-secret <secret> -n <namespace>
