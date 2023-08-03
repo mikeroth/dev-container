@@ -1,4 +1,5 @@
 ## Mike's Dev Container
+Leave your local alone and work here
 
 # Assumptions
 * You have `Oh My ZSH` installed
